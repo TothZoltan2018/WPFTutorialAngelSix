@@ -3,11 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfTreeView"
-        Loaded="Window_Loaded"
+        xmlns:local="clr-namespace:WpfTreeView"        
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <StackPanel>
+        <!--<Button Content="{Binding}"/>-->
+        <Button Content="{Binding TestProp}"/>
+        <Grid>
 
         <TreeView x:Name="FolderView">
             <TreeView.Resources>
@@ -31,4 +33,5 @@
             </TreeView.Resources>
         </TreeView>
     </Grid>
+    </StackPanel>
 </Window>
