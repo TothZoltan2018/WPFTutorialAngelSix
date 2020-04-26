@@ -1,14 +1,15 @@
-﻿using System.ComponentModel;
+﻿using PropertyChanged;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace WpfTreeView
 {
-    public class Class1 : INotifyPropertyChanged // --> From this Interface this class is a ViewModel
+    //Fody (from nuget package) related attribute.
+    //This finds all properties in ths class and fires the PropertyChanged event when the prop is changed
+    //It seems that we don't need to implement INotifyPropertyChanged interface.
+    [AddINotifyPropertyChangedInterface]
+    public class Class1
     {
-        private string mTest;
-
-        public event PropertyChangedEventHandler PropertyChanged  = (sender, e) => { };
-
         //if we write in the MainWindow.xaml <Button Content="{Binding}"/> then content wants to write string, which is the name of the class1. Instead,
         // write something more reasonable, like:
         public override string ToString()
@@ -16,23 +17,7 @@ namespace WpfTreeView
             return "Hello Word!";
         }
 
-        public string TestProp
-        {
-            get
-            {
-                return mTest;
-            }
-            set
-            {
-                if (mTest == value)
-                    return;
-
-                mTest = value;
-                //In order that "TestProp" is refreshed:
-                //PropertyChanged(this, new PropertyChangedEventArgs("TestProp")); //This will fire the PropertyChangedEventHandler event.
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(TestProp))); //This will fire the PropertyChangedEventHandler event.
-            }
-        } 
+        public string TestProp { get; set; }
 
         public Class1()
         {
