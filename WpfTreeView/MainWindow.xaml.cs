@@ -28,11 +28,9 @@ namespace WpfTreeView
         {
             InitializeComponent();
 
-            //This is the route of the UI in terms of databinding
-            //That is, if we write in the MainWindow.xaml <Button Content="{Binding}"/> then
-            //the Button will bind to Class1
-            this.DataContext = new Class1();
-                        
+            //Everything in the UI is bound to DirectoryStructureViewModel class
+            this.DataContext = new DirectoryStructureViewModel();
+
         }
         #endregion 
     }

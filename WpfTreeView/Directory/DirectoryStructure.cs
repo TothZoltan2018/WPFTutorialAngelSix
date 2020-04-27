@@ -34,7 +34,7 @@ namespace WpfTreeView
             //Try and get directories from the folder ignoring any issues
             try
             {
-                var dirs = Directory.GetDirectories(fullPath); //E.g. USer has no permissiuon to Windows/System folder --> Exception
+                var dirs = Directory.GetDirectories(fullPath); //E.g. User has no permission to Windows/System folder --> Exception
 
                 if (dirs.Length > 0)
                     items.AddRange(dirs.Select(d => new DirectoryItem { FullPath = d, Type = DirectoryItemType.Folder }));

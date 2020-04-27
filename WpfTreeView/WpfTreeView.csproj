@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Directory\ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="Directory\ViewModels\DirectoryItemViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,6 +74,8 @@
     <Compile Include="Directory\Data\DirectoryItem.cs" />
     <Compile Include="Directory\Data\DirectoryItemType.cs" />
     <Compile Include="Directory\DirectoryStructure.cs" />
+    <Compile Include="Directory\ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="Directory\ViewModels\DirectoryStructureViewModel.cs" />
     <Compile Include="HeaderToImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
